@@ -3,12 +3,15 @@ const cookieParser = require('cookie-parser')
 const globalError = require('./controllers/errorController')
 const userRouter = require('./routes/userRouter')
 const navadRouter = require('./routes/navadRouter')
+const cors = require('cors')
 const app = express();
 
 app.use(express.json({ limit: '10kb' }));
 app.use(express.urlencoded({ extended: true, limit: '10kb' }));
 app.use(cookieParser());
+app.use(cors())
 
+app.options('*', cors());
 
 app.use('/api/v1/users', userRouter);
 app.use('/api/v1/navad', navadRouter)
