@@ -7,8 +7,8 @@ const productRouter = require('./routes/productRouter')
 const cors = require('cors')
 const app = express();
 
-app.use(express.json());
-// app.use(express.urlencoded({ extended: true, limit: '10kb' }));
+app.use(express.json({ limit: '10kb' }));
+app.use(express.urlencoded({ extended: true, limit: '10kb' }));
 app.use(cookieParser());
 app.use(cors())
 
