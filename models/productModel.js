@@ -63,33 +63,33 @@ const productSchema = new mongoose.Schema(
       type: Number,
       default: 0,
     },
-    pCategory: {
-      type: ObjectId,
-      ref: "categories",
-    },
-    pSubcategory: {
-      type: ObjectId,
+    // pCategory: {
+    //   type: ObjectId,
+    //   ref: "categories",
+    // },
+    // pSubcategory: {
+    //   type: ObjectId,
 
-      ref: "categories",
-      foreignField: "subcategories._id",
-      localField: "_id",
-    },
+    //   ref: "categories",
+    //   foreignField: "subcategories._id",
+    //   localField: "_id",
+    // },
 
     pImages: {
       type: [String],
       required: true,
     },
-    pOffer: {
-      type: Number,
-      default: null,
-      validate: {
-        validator: function(val) {
-          return val < this.pPrice && val < 100;
-        },
-        message:
-          "Discount price ({VALUE}) should be below regular price and should be less that 100%",
-      },
-    },
+    // pOffer: {
+    //   type: Number,
+    //   default: null,
+    //   validate: {
+    //     validator: function(val) {
+    //       return val < this.pPrice && val < 100;
+    //     },
+    //     message:
+    //       "Discount price ({VALUE}) should be below regular price and should be less that 100%",
+    //   },
+    // },
 
     pStatus: {
       type: String,
