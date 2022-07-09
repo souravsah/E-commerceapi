@@ -76,7 +76,7 @@ const productSchema = new mongoose.Schema(
     // },
 
     pImages: {
-      type: [String],
+      type: String,
       required: true,
     },
     // pOffer: {
