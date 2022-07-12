@@ -19,3 +19,4 @@ router
      .get(wishlistController.getWishlist)
      .delete(wishlistController.deleteWishlist)
      
+module.exports=router;
