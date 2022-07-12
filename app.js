@@ -14,7 +14,7 @@ app.use(cookieParser());
 app.use(cors())
 
 app.options('*', cors());
-//app.use('/api/v1/wishist',wishlistRouter)
+app.use('/api/v1/wishist',wishlistRouter)
 app.use('/api/v1/product',productRouter)
 app.use('/api/v1/users', userRouter);
 app.use('/api/v1/navad', navadRouter)

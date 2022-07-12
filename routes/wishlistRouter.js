@@ -2,16 +2,17 @@ const express = require('express')
 const authController = require('./../controllers/authController')
 const wishlistController=require('./../controllers/wishlistController')
 const router =express.Router()
-// router.use(authController.protect)
+
+router.use(authController.protect)
 
 
 router
     .route('/')
     .get(wishlistController.getAllWishlist)
-    .post(
-        wishlistController.setProductsUserIds,
-        wishlistController.createWishlist  
-        );
+    // .post(
+    //     wishlistController.setProductsUserIds,
+    //     wishlistController.createWishlist  
+    //     );
 
 router
      .route('/:id')
