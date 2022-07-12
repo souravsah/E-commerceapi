@@ -9,10 +9,10 @@ router.use(authController.protect)
 router
     .route('/')
     .get(wishlistController.getAllWishlist)
-    // .post(
-    //     wishlistController.setProductsUserIds,
-    //     wishlistController.createWishlist  
-    //     );
+    .post(
+        wishlistController.setProductsUserIds,
+        wishlistController.createWishlist  
+        );
 
 router
      .route('/:id')
