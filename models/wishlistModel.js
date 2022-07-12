@@ -12,7 +12,10 @@ const wishlistSchema = new mongoose.Schema(
         ref:"Product",
         required:[true,'Wishlist must belong to a User']
     },
-    createdId:Date
+    createdAt:{
+        type:Date,
+        default:Date.now()
+    }
 },
 {
     toJSON: { virtuals: true },
@@ -20,16 +23,10 @@ const wishlistSchema = new mongoose.Schema(
 }
 )  
 
-wishlistSchema.pre('save',function(next){
-    this.createdId=Date.now()-1000;
-    next();
-})
+
 
 wishlistSchema.pre(/^find/, function(next) {
     this.populate({
-        path:'userId', 
-        select:'name photo' 
-    }).populate({
         path:'productId'
     })
     next()
@@ -37,4 +34,4 @@ wishlistSchema.pre(/^find/, function(next) {
 
 const Wishlist = mongoose.model('Wishlist',wishlistSchema)
 
-module.exports =Wishlist;
+module.exports = Wishlist;
