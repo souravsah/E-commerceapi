@@ -27,6 +27,7 @@ wishlistSchema.pre(/^find/,function(next){
     }).populate({
         path:'productId'
     })
+    next()
 })
 
 const Wishlist = mongoose.model('Wishlist',wishlistSchema)
