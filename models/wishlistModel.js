@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-
+const User = require('./../models/userModel')
 const wishlistSchema = new mongoose.Schema(
 {
     userId:{
@@ -25,12 +25,12 @@ const wishlistSchema = new mongoose.Schema(
 
 
 
-wishlistSchema.pre(/^find/, function(next) {
-    this.populate({
-        path:'productId'
-    })
-    next()
-});
+// wishlistSchema.pre(/^find/, function(next) {
+//     this.populate({
+//         path:'productId'
+//     })
+//     next()
+// });
 
 const Wishlist = mongoose.model('Wishlist',wishlistSchema)
 
