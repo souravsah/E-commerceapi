@@ -1,4 +1,4 @@
-const Wishlist = require('./../models/reviewModel')
+const Wishlist = require('./../models/wishlistModel')
 const factory = require('./handlerFactory')
 const { promisify } = require('util');
 const jwt = require('jsonwebtoken');
