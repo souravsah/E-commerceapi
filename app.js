@@ -5,6 +5,7 @@ const userRouter = require('./routes/userRouter')
 const navadRouter = require('./routes/navadRouter')
 const productRouter = require('./routes/productRouter')
 const wishlistRouter = require('./routes/wishlistRouter')
+const cartRouter = require('./routes/cartRouter')
 const cors = require('cors')
 const app = express();
 
@@ -14,6 +15,7 @@ app.use(cookieParser());
 app.use(cors())
 
 app.options('*', cors());
+app.use('/api/v1/cart',cartRouter)
 app.use('/api/v1/wishlist',wishlistRouter)
 app.use('/api/v1/product',productRouter)
 app.use('/api/v1/users', userRouter);
